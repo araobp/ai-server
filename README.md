@@ -27,6 +27,10 @@ Here is a notebook of object detection test script with the PTH file.
 
 [Scratch detection (Jupyter Notebook)](./python/SobelFilter.ipynb)
 
+## Morphological transformation for redusing noises
+
+[Scratch detection (Jupyter Notebook)](./python/MorphologicalTransformation.ipynb)
+
 
 
 
