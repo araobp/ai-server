@@ -25,7 +25,7 @@ Here is a notebook of object detection test script with the PTH file.
 
 ## Scratch detection with Sobel filter
 
-[Scratch detection (Jupyter Notebook)](./python/SobelFiter.ipynb)
+[Scratch detection (Jupyter Notebook)](./python/SobelFilter.ipynb)
 
 
 
