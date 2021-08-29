@@ -2,6 +2,16 @@
 
 (Work in progress)
 
+## Goal
+
+I have been developing AR applications these days. In some cases, a combination of AR and AI seems to be suitable for work automation.
+
+In this project, I develop image processing argorithms (incl. AI) for AR applications.
+
+```
+ [AR app (based on Unity AR Foundation)]-----image---->[AI server]
+```
+
 ## Construction material recognition on PyTorch
 
 I have been using OpenCV and Tensorflow Lite on Android for some projects at work. But, this time I want to run AI on my PC, with my custom datasets.
