@@ -23,7 +23,9 @@ This project uses [Detecto (based on PyTorch)](https://github.com/alankbi/detect
 Here is a notebook of object detection test script with the PTH file. 
 [Object detection (Jupyter Notebook)](./python/ObjectDetection.ipynb)
 
-## Histgram equalization
+## Scratch detection with Sobel filter
+
+[Scratch detection (Jupyter Notebook)](./python/SobelFilter.ipynb)
 
 
 
