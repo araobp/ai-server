@@ -4,8 +4,6 @@ import numpy as np
 import argparse
 from detecto.core import Model
 import time
-from queue import Queue
-from threading import Thread
 
 SERVER_PORT = 1883
 TOPIC_TX = 'AI-tx'
@@ -23,8 +21,6 @@ args = parser.parse_args()
 
 labels = ['outlet', 'mouth', 'earth terminal']
 saved_model = Model.load(FILENAME, labels)
-
-image_queue = Queue()
 
 def on_connect(client, userdata, flags, rc):
     print("Connected")
@@ -87,17 +83,6 @@ def on_message(client, userdata, msg):
     cv.waitKey(0)
     cv.destroyAllWindows()
 
-    image_queue.put(binary_dst)
-
-def worker():
-    while True:
-        if not image_queue.empty():
-            img_data = image_queue.get()
-            client.publish(TOPIC_RX, img_data)
-            print("published")
-            image_queue.task_done()
-        time.sleep(0.5)
-
 if __name__ == "__main__":
 
     client = mqtt.Client(client_id=args.devicename)
@@ -107,11 +92,6 @@ if __name__ == "__main__":
     client.on_message = on_message
 
     client.connect(args.ip, SERVER_PORT, keepalive=60, bind_address="")
-
-    thread = Thread(target=worker)
-    thread.setDaemon(True)
-    thread.start()
-    print("thread started")
 
     try:
         client.loop_forever()
